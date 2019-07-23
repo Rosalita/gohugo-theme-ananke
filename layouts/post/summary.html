@@ -3,9 +3,11 @@
   <div class="nested-links f6 dib tracked lh-copy nested-copy-line-height">
     {{ .Date.Format "January 2, 2006" }}
   </div>
-  {{ end }} {{ if (eq (.Param "show_reading_time") true )}}
-  <span class="f6 dib tracked"> - {{ .ReadingTime}} minutes read</span>
-  <span class="f6 dib tracked"> - {{ .WordCount}} words</span>
+  {{ end }} 
+  <br>
+  {{ if (eq (.Param "show_reading_time") true )}}
+  <span class="f6 dib tracked"> {{ .ReadingTime}} minutes read</span>
+  <span class="f6 mv3 dib tracked"> - {{ .WordCount}} words</span>
   {{ end }}
 
   <h1 class="f3 near-black">
@@ -18,10 +20,10 @@
   </div>
   <div class="nested-links f6 lh-copy nested-copy-line-height">
     <br> {{ if .Params.categories }} Categories:
-    <a href="{{site.BaseURL}}/categories/">{{ .Params.categories }}</a>
+    <a href="{{site.BaseURL}}categories/">{{ .Params.categories }}</a>
     {{ end}}
     <br> {{ if .Params.tags}} Tags:
-    <a href="{{site.BaseURL}}/tags/">{{ .Params.tags }}</a>
+    <a href="{{site.BaseURL}}tags/">{{ .Params.tags }}</a>
     {{ end}}
   </div>
 </div>
